@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckSquare, Calendar, Event } from 'lucide-react';
+import { CheckSquare, Calendar, CalendarDays } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const BottomNavigation = () => {
@@ -27,7 +27,7 @@ const BottomNavigation = () => {
           variant="ghost"
           className="flex-1 flex flex-col items-center gap-1 py-3 h-auto"
         >
-          <Event className="h-5 w-5" />
+          <CalendarDays className="h-5 w-5" />
           <span className="text-xs">Eventos</span>
         </Button>
       </div>
