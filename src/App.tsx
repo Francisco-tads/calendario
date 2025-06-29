@@ -8,23 +8,26 @@ import Index from "./pages/Index";
 import Tasks from "./pages/Tasks";
 import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
+import { CalendarProvider } from "./contexts/CalendarContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/tasks" element={<Tasks />} />
-          <Route path="/events" element={<Events />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <CalendarProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/events" element={<Events />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </CalendarProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
