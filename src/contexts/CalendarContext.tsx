@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 export interface CalendarEvent {
@@ -95,7 +94,7 @@ export const CalendarProvider: React.FC<CalendarProviderProps> = ({ children }) 
       id: 'feriado-8',
       title: 'Revolução Constitucionalista',
       description: 'Feriado estadual - São Paulo',
-      date: new Date(2025, 6, 9).toISOString(), // 9 de Julho
+      date: new Date(2025, 6, 9).toISOString(),
       type: 'holiday',
     },
     {
@@ -130,7 +129,7 @@ export const CalendarProvider: React.FC<CalendarProviderProps> = ({ children }) 
       id: 'feriado-13',
       title: 'Consciência Negra',
       description: 'Feriado nacional',
-      date: new Date(2025, 10, 20).toISOString(), // 20 de Novembro
+      date: new Date(2025, 10, 20).toISOString(),
       type: 'holiday',
     },
     {
@@ -140,33 +139,55 @@ export const CalendarProvider: React.FC<CalendarProviderProps> = ({ children }) 
       date: new Date(2025, 11, 25).toISOString(),
       type: 'holiday',
     },
+    // Feriados específicos do Piauí
+    {
+      id: 'feriado-piaui-1',
+      title: 'Dia da Batalha do Jenipapo',
+      description: 'Feriado estadual - Piauí',
+      date: new Date(2025, 2, 13).toISOString(),
+      type: 'holiday',
+    },
+    {
+      id: 'feriado-piaui-2',
+      title: 'Dia de Nossa Senhora das Mercês',
+      description: 'Feriado estadual - Piauí',
+      date: new Date(2025, 8, 24).toISOString(),
+      type: 'holiday',
+    },
+    {
+      id: 'feriado-piaui-3',
+      title: 'Dia da Criação do Estado do Piauí',
+      description: 'Feriado estadual - Piauí',
+      date: new Date(2025, 9, 19).toISOString(),
+      type: 'holiday',
+    },
     // Feriados estaduais adicionais
     {
       id: 'feriado-15',
       title: 'Morte de Zumbi dos Palmares',
       description: 'Feriado estadual - Alagoas',
-      date: new Date(2025, 10, 29).toISOString(), // 29 de Novembro
+      date: new Date(2025, 10, 29).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-16',
       title: 'São Jorge',
       description: 'Feriado estadual - Rio de Janeiro',
-      date: new Date(2025, 3, 23).toISOString(), // 23 de Abril
+      date: new Date(2025, 3, 23).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-17',
       title: 'Dia de São João',
       description: 'Feriado em alguns estados do Nordeste',
-      date: new Date(2025, 5, 24).toISOString(), // 24 de Junho
+      date: new Date(2025, 5, 24).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-18',
       title: 'São Pedro',
       description: 'Feriado em alguns estados do Nordeste',
-      date: new Date(2025, 5, 29).toISOString(), // 29 de Junho
+      date: new Date(2025, 5, 29).toISOString(),
       type: 'holiday',
     },
     // Datas comemorativas
@@ -209,21 +230,21 @@ export const CalendarProvider: React.FC<CalendarProviderProps> = ({ children }) 
       id: 'comemorativa-6',
       title: 'Festa Junina',
       description: 'Data comemorativa',
-      date: new Date(2025, 5, 23).toISOString(), // 23 de Junho
+      date: new Date(2025, 5, 23).toISOString(),
       type: 'commemorative',
     },
     {
       id: 'comemorativa-7',
       title: 'Dia da Independência dos EUA',
       description: 'Data comemorativa internacional',
-      date: new Date(2025, 6, 4).toISOString(), // 4 de Julho
+      date: new Date(2025, 6, 4).toISOString(),
       type: 'commemorative',
     },
     {
       id: 'comemorativa-8',
       title: 'Halloween',
       description: 'Data comemorativa internacional',
-      date: new Date(2025, 9, 31).toISOString(), // 31 de Outubro
+      date: new Date(2025, 9, 31).toISOString(),
       type: 'commemorative',
     },
   ]);
