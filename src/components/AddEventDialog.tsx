@@ -10,33 +10,24 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import { useCalendar } from '../contexts/CalendarContext';
 import { toast } from 'sonner';
 
 interface AddEventDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  selectedDate: Date;
 }
 
 const AddEventDialog: React.FC<AddEventDialogProps> = ({
   open,
   onOpenChange,
-  selectedDate,
 }) => {
   const { addEvent } = useCalendar();
   const [formData, setFormData] = useState({
     title: '',
     description: '',
+    date: new Date().toISOString().split('T')[0], // Today's date
     time: '',
-    type: 'event' as 'event' | 'task',
   });
   
   const handleSubmit = (e: React.FormEvent) => {
@@ -47,13 +38,15 @@ const AddEventDialog: React.FC<AddEventDialogProps> = ({
       return;
     }
     
+    const selectedDate = new Date(formData.date);
+    
     const newEvent = {
       id: Date.now().toString(),
       title: formData.title.trim(),
       description: formData.description.trim(),
       date: selectedDate.toISOString(),
       time: formData.time,
-      type: formData.type,
+      type: 'event' as const,
     };
     
     addEvent(newEvent);
@@ -63,8 +56,8 @@ const AddEventDialog: React.FC<AddEventDialogProps> = ({
     setFormData({
       title: '',
       description: '',
+      date: new Date().toISOString().split('T')[0],
       time: '',
-      type: 'event',
     });
     
     onOpenChange(false);
@@ -77,14 +70,6 @@ const AddEventDialog: React.FC<AddEventDialogProps> = ({
           <DialogTitle className="text-xl">
             Adicionar Evento
           </DialogTitle>
-          <p className="text-sm text-muted-foreground">
-            {selectedDate.toLocaleDateString('pt-BR', {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </p>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -116,6 +101,18 @@ const AddEventDialog: React.FC<AddEventDialogProps> = ({
           
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
+              <Label htmlFor="date">Data</Label>
+              <Input
+                id="date"
+                type="date"
+                value={formData.date}
+                onChange={(e) =>
+                  setFormData(prev => ({ ...prev, date: e.target.value }))
+                }
+              />
+            </div>
+            
+            <div className="space-y-2">
               <Label htmlFor="time">Horário</Label>
               <Input
                 id="time"
@@ -125,24 +122,6 @@ const AddEventDialog: React.FC<AddEventDialogProps> = ({
                   setFormData(prev => ({ ...prev, time: e.target.value }))
                 }
               />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="type">Tipo</Label>
-              <Select
-                value={formData.type}
-                onValueChange={(value: 'event' | 'task') =>
-                  setFormData(prev => ({ ...prev, type: value }))
-                }
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="event">Evento</SelectItem>
-                  <SelectItem value="task">Tarefa</SelectItem>
-                </SelectContent>
-              </Select>
             </div>
           </div>
           
