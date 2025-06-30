@@ -46,84 +46,127 @@ export const CalendarProvider: React.FC<CalendarProviderProps> = ({ children }) 
       id: 'feriado-1',
       title: 'Confraternização Universal',
       description: 'Feriado nacional',
-      date: new Date(2025, 0, 1).toISOString(), // Janeiro 1
+      date: new Date(2025, 0, 1).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-2',
       title: 'Carnaval',
       description: 'Feriado nacional',
-      date: new Date(2025, 2, 3).toISOString(), // Março 3
+      date: new Date(2025, 2, 3).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-3',
       title: 'Carnaval',
       description: 'Feriado nacional',
-      date: new Date(2025, 2, 4).toISOString(), // Março 4
+      date: new Date(2025, 2, 4).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-4',
       title: 'Sexta-feira Santa',
       description: 'Feriado nacional',
-      date: new Date(2025, 3, 18).toISOString(), // Abril 18
+      date: new Date(2025, 3, 18).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-5',
       title: 'Tiradentes',
       description: 'Feriado nacional',
-      date: new Date(2025, 3, 21).toISOString(), // Abril 21
+      date: new Date(2025, 3, 21).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-6',
       title: 'Dia do Trabalhador',
       description: 'Feriado nacional',
-      date: new Date(2025, 4, 1).toISOString(), // Maio 1
+      date: new Date(2025, 4, 1).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-7',
       title: 'Corpus Christi',
       description: 'Feriado nacional',
-      date: new Date(2025, 5, 19).toISOString(), // Junho 19
+      date: new Date(2025, 5, 19).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-8',
-      title: 'Independência do Brasil',
-      description: 'Feriado nacional',
-      date: new Date(2025, 8, 7).toISOString(), // Setembro 7
+      title: 'Revolução Constitucionalista',
+      description: 'Feriado estadual - São Paulo',
+      date: new Date(2025, 6, 9).toISOString(), // 9 de Julho
       type: 'holiday',
     },
     {
       id: 'feriado-9',
-      title: 'Nossa Senhora Aparecida',
+      title: 'Independência do Brasil',
       description: 'Feriado nacional',
-      date: new Date(2025, 9, 12).toISOString(), // Outubro 12
+      date: new Date(2025, 8, 7).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-10',
-      title: 'Finados',
+      title: 'Nossa Senhora Aparecida',
       description: 'Feriado nacional',
-      date: new Date(2025, 10, 2).toISOString(), // Novembro 2
+      date: new Date(2025, 9, 12).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-11',
-      title: 'Proclamação da República',
+      title: 'Finados',
       description: 'Feriado nacional',
-      date: new Date(2025, 10, 15).toISOString(), // Novembro 15
+      date: new Date(2025, 10, 2).toISOString(),
       type: 'holiday',
     },
     {
       id: 'feriado-12',
+      title: 'Proclamação da República',
+      description: 'Feriado nacional',
+      date: new Date(2025, 10, 15).toISOString(),
+      type: 'holiday',
+    },
+    {
+      id: 'feriado-13',
+      title: 'Consciência Negra',
+      description: 'Feriado nacional',
+      date: new Date(2025, 10, 20).toISOString(), // 20 de Novembro
+      type: 'holiday',
+    },
+    {
+      id: 'feriado-14',
       title: 'Natal',
       description: 'Feriado nacional',
-      date: new Date(2025, 11, 25).toISOString(), // Dezembro 25
+      date: new Date(2025, 11, 25).toISOString(),
+      type: 'holiday',
+    },
+    // Feriados estaduais adicionais
+    {
+      id: 'feriado-15',
+      title: 'Morte de Zumbi dos Palmares',
+      description: 'Feriado estadual - Alagoas',
+      date: new Date(2025, 10, 29).toISOString(), // 29 de Novembro
+      type: 'holiday',
+    },
+    {
+      id: 'feriado-16',
+      title: 'São Jorge',
+      description: 'Feriado estadual - Rio de Janeiro',
+      date: new Date(2025, 3, 23).toISOString(), // 23 de Abril
+      type: 'holiday',
+    },
+    {
+      id: 'feriado-17',
+      title: 'Dia de São João',
+      description: 'Feriado em alguns estados do Nordeste',
+      date: new Date(2025, 5, 24).toISOString(), // 24 de Junho
+      type: 'holiday',
+    },
+    {
+      id: 'feriado-18',
+      title: 'São Pedro',
+      description: 'Feriado em alguns estados do Nordeste',
+      date: new Date(2025, 5, 29).toISOString(), // 29 de Junho
       type: 'holiday',
     },
     // Datas comemorativas
@@ -131,42 +174,56 @@ export const CalendarProvider: React.FC<CalendarProviderProps> = ({ children }) 
       id: 'comemorativa-1',
       title: 'Dia dos Namorados',
       description: 'Data comemorativa',
-      date: new Date(2025, 5, 12).toISOString(), // Junho 12
+      date: new Date(2025, 5, 12).toISOString(),
       type: 'commemorative',
     },
     {
       id: 'comemorativa-2',
       title: 'Início do Inverno',
       description: 'Data comemorativa',
-      date: new Date(2025, 5, 21).toISOString(), // Junho 21
+      date: new Date(2025, 5, 21).toISOString(),
       type: 'commemorative',
     },
     {
       id: 'comemorativa-3',
-      title: 'Dia de São João',
+      title: 'Dia das Mães',
       description: 'Data comemorativa',
-      date: new Date(2025, 5, 24).toISOString(), // Junho 24
+      date: new Date(2025, 4, 11).toISOString(),
       type: 'commemorative',
     },
     {
       id: 'comemorativa-4',
-      title: 'Dia das Mães',
+      title: 'Dia dos Pais',
       description: 'Data comemorativa',
-      date: new Date(2025, 4, 11).toISOString(), // Maio 11 (segundo domingo)
+      date: new Date(2025, 7, 10).toISOString(),
       type: 'commemorative',
     },
     {
       id: 'comemorativa-5',
-      title: 'Dia dos Pais',
+      title: 'Dia das Crianças',
       description: 'Data comemorativa',
-      date: new Date(2025, 7, 10).toISOString(), // Agosto 10 (segundo domingo)
+      date: new Date(2025, 9, 12).toISOString(),
       type: 'commemorative',
     },
     {
       id: 'comemorativa-6',
-      title: 'Dia das Crianças',
+      title: 'Festa Junina',
       description: 'Data comemorativa',
-      date: new Date(2025, 9, 12).toISOString(), // Outubro 12
+      date: new Date(2025, 5, 23).toISOString(), // 23 de Junho
+      type: 'commemorative',
+    },
+    {
+      id: 'comemorativa-7',
+      title: 'Dia da Independência dos EUA',
+      description: 'Data comemorativa internacional',
+      date: new Date(2025, 6, 4).toISOString(), // 4 de Julho
+      type: 'commemorative',
+    },
+    {
+      id: 'comemorativa-8',
+      title: 'Halloween',
+      description: 'Data comemorativa internacional',
+      date: new Date(2025, 9, 31).toISOString(), // 31 de Outubro
       type: 'commemorative',
     },
   ]);

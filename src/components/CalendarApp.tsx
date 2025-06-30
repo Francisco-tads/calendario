@@ -101,7 +101,6 @@ const CalendarApp = () => {
         <AddEventDialog
           open={showAddEvent}
           onOpenChange={setShowAddEvent}
-          selectedDate={selectedDate}
         />
       </div>
     </CalendarProvider>
